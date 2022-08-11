@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:theme="@style/Theme.MyApplication"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/saque_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/white"
+        app:icon="@drawable/ic_round_monetization_on_24"
+        app:iconSize="35dp"
+        app:iconTint="@color/green"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="20dp"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/limpar_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/white"
+        app:icon="@drawable/ic_baseline_clear_all_24"
+        app:iconSize="35dp"
+        app:iconTint="@color/green"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:textSize="47sp"
+        android:text="Sacar dinheiro 💵"
+        android:layout_marginTop="20dp" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:dividerColor="@color/green"
+        app:dividerInsetStart="20dp"
+        app:dividerInsetEnd="20dp"
+        app:dividerThickness="2dp"/>
+
+    <TextView
+        android:id="@+id/valor_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_marginStart="20dp"
+        android:textSize="30sp"
+        android:text="Valor:"
+        android:layout_marginTop="90dp" />
+
+    <TextView
+        android:id="@+id/saque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:visibility="invisible"
+        android:textSize="30sp"
+        android:textColor="@color/green"
+        android:layout_marginTop="90dp" />
+
+    <TextView
+        android:id="@+id/aviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:text="Clique no botão flutuante no canto inferior direito para sacar o seu dinheirinho (›_‹)"
+        android:textColor="#B3B3B3"
+        android:padding="40dp"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/saida_user200"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="135dp" />
+
+    <TextView
+        android:id="@+id/saida_user100"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="165dp" />
+
+    <TextView
+        android:id="@+id/saida_user50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="195dp" />
+
+    <TextView
+        android:id="@+id/saida_user20"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="225dp" />
+
+    <TextView
+        android:id="@+id/saida_user10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="255dp" />
+
+    <TextView
+        android:id="@+id/saida_user5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="285dp" />
+
+    <TextView
+        android:id="@+id/saida_user2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="315dp" />
+
+    <TextView
+        android:id="@+id/saida_user1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="345dp" />
+
+    <TextView
+        android:id="@+id/titulo_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible"
+        android:textSize="25sp"
+        android:text="Extrato bancário"
+        android:layout_marginHorizontal="20dp"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_marginTop="37dp"
+        android:layout_gravity="center"
+        app:dividerColor="@color/green"
+        app:dividerInsetStart="20dp"
+        app:dividerInsetEnd="20dp"
+        app:dividerThickness="2dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="100dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/valor1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valor2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor1"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valor3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor2"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valor4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor3"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valor5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor4"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valor6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor5"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valor7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor6"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valor8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor7"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/valorFinal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/valor8"
+                android:padding="5dp"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

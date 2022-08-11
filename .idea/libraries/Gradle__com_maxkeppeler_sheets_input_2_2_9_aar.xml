@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.maxkeppeler.sheets:input:2.2.9@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8038da4f83ac402e5a1613149fb1652f/transformed/input-2.2.9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8038da4f83ac402e5a1613149fb1652f/transformed/input-2.2.9/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8038da4f83ac402e5a1613149fb1652f/transformed/input-2.2.9/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
