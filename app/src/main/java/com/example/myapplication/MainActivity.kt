@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     fun separarNotas(){
+        binding.saqueBtn.isEnabled = false
+
         InputSheet().show(this) {
             style(SheetStyle.BOTTOM_SHEET)
             title("Sacar dinheiro")
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                 drawable(R.drawable.ic_round_monetization_on_24)
                 label("Insira o valor do saque")
             })
+            onClose { binding.saqueBtn.isEnabled = true }
             positiveButtonColorRes(R.color.green)
             onPositive("Sacar") { result ->
 

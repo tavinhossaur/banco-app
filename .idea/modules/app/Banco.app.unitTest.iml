@@ -13,7 +13,6 @@
           <stringArguments>
             <stringArg name="classpath">
               <args>
-                <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d7f0356cf9f58f35296be0d1a30c7714/transformed/input-2.2.9-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0ebcf1827abe29837cbf9deae7075704/transformed/core-2.2.9-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/c22ab4ef32da33e476693b90a3190320/transformed/viewbinding-7.2.0-api.jar</arg>
