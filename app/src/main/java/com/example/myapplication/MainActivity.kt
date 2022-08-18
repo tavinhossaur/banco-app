@@ -36,6 +36,23 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun separarNotas(){
         binding.saqueBtn.isEnabled = false
+        var n200 = 0
+        var n100 = 0
+        var n50 = 0
+        var n20 = 0
+        var n10 = 0
+        var n5 = 0
+        var n2 = 0
+        var n1 = 0
+
+        var t200 = 0
+        var t100 = 0
+        var t50 = 0
+        var t20 = 0
+        var t10 = 0
+        var t5 = 0
+        var t2 = 0
+        var t1 = 0
 
         InputSheet().show(this) {
             style(SheetStyle.BOTTOM_SHEET)
@@ -50,6 +67,14 @@ class MainActivity : AppCompatActivity() {
             onClose { binding.saqueBtn.isEnabled = true }
             positiveButtonColorRes(R.color.green)
             onPositive("Sacar") { result ->
+                t200 = 5
+                t100 = 5
+                t50 = 5
+                t20 = 5
+                t10 = 5
+                t5 = 5
+                t2 = 5
+                t1 = 5
 
                 try {
                     var valorUser = result.getString("valor").toString().toInt()
@@ -58,74 +83,124 @@ class MainActivity : AppCompatActivity() {
                 if (valorCompleto > 1000000000){
                     Toast.makeText(this@MainActivity, "Você com certeza não é tão rico assim", Toast.LENGTH_LONG).show()
                 }else{
-                    val n200 = (valorUser / 200)
-                    valorUser -= (n200 * 200)
 
-                    val n100 = (valorUser / 100)
-                    valorUser -= (n100 * 100)
+                    n200 = valorUser / 200
+                    if (n200 > t200) {
+                        n200 = t200
+                    }
+                    valorUser -= n200 * 200
+                    t200 -= n200
 
-                    val n50 = (valorUser / 50)
-                    valorUser -= (n50 * 50)
+                    n100 = valorUser / 100
+                    if (n100 >= t100) {
+                        n100 = t100
+                    }
+                    valorUser -= n100 * 100
+                    t100 -= n100
 
-                    val n20 = (valorUser / 20)
-                    valorUser -= (n20 * 20)
+                    n50 = valorUser / 50
+                    if (n50 >= t50) {
+                        n50 = t50
+                    }
+                    valorUser -= n50 * 50
+                    t50 -= n50
 
-                    val n10 = (valorUser / 10)
-                    valorUser -= (n10 * 10)
+                    n20 = valorUser / 20
+                    if (n20 >= t20) {
+                        n20 = t20
+                    }
+                    valorUser -= n20 * 20
+                    t20 -= n20
 
-                    val n5 = (valorUser / 5)
-                    valorUser -= (n5 * 5)
+                    n10 = valorUser / 10
+                    if (n10 >= t10) {
+                        n10 = t10
+                    }
+                    valorUser -= n10 * 10
+                    t10 -= n10
 
-                    val n2 = (valorUser / 2)
-                    valorUser -= (n2 * 2)
+                    n5 = valorUser / 5
+                    if (n5 >= t5) {
+                        n5 = t5
+                    }
+                    valorUser -= n5 * 5
+                    t5 -= n5
 
-                    val n1 = valorUser
+                    n2 = valorUser / 2
+                    if (n2 >= t2) {
+                        n2 = t2
+                    }
+                    valorUser -= n2 * 2
+                    t2 -= n2
+
+                    n1 = valorUser / 1
+                    if (n1 >= t1) {
+                        n1 = t1
+                    }
+                    valorUser -= n1 * 1
+                    t1 -= n1
 
                     if (n200 == 1){
                         binding.saidaUser200.text = "Notas de R$200,00: $n200 nota."
 
+                    }else if(n200 == 0){
+                        binding.saidaUser200.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser200.text = "Notas de R$200,00: $n200 notas."
                     }
 
                     if (n100 == 1){
                         binding.saidaUser100.text = "Notas de R$100,00: $n100 nota."
+                    }else if(n100 == 0){
+                        binding.saidaUser100.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser100.text = "Notas de R$100,00: $n100 notas."
                     }
 
                     if (n50 == 1){
                         binding.saidaUser50.text = "Notas de R$50,00: $n50 nota."
+                    }else if(n50 == 0){
+                        binding.saidaUser50.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser50.text = "Notas de R$50,00: $n50 notas."
                     }
 
                     if (n20 == 1){
                         binding.saidaUser20.text = "Notas de R$20,00: $n20 nota."
+                    }else if(n20 == 0){
+                        binding.saidaUser20.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser20.text = "Notas de R$20,00: $n20 notas."
                     }
 
                     if (n10 == 1){
                         binding.saidaUser10.text = "Notas de R$10,00: $n10 nota."
+                    }else if(n10 == 0){
+                        binding.saidaUser10.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser10.text = "Notas de R$10,00: $n10 notas."
                     }
 
                     if (n5 == 1){
                         binding.saidaUser5.text = "Notas de R$5,00: $n5 nota."
+                    }else if(n5 == 0){
+                        binding.saidaUser5.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser5.text = "Notas de R$5,00: $n5 notas."
                     }
 
                     if (n2 == 1){
                         binding.saidaUser2.text = "Notas de R$2,00: $n2 nota."
+                    }else if(n2 == 0){
+                        binding.saidaUser2.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser2.text = "Notas de R$2,00: $n2 notas."
                     }
 
                     if (n1 == 1){
                         binding.saidaUser1.text = "Notas de R$1,00: $n1 nota."
+                    }else if(n1 == 0){
+                        binding.saidaUser1.visibility = View.INVISIBLE
                     }else{
                         binding.saidaUser1.text = "Notas de R$1,00: $n1 notas."
                     }
@@ -164,29 +239,45 @@ class MainActivity : AppCompatActivity() {
                     val res7 = (2 * n2)
                     val res8 = (1 * n1)
 
-                    binding.valor1.text = "(200 × $n200) = $res1,00"
-                    binding.valor1.visibility = View.VISIBLE
+                    if(n200 != 0){
+                        binding.valor1.text = "(200 × $n200) = $res1,00"
+                        binding.valor1.visibility = View.VISIBLE
+                    }else{binding.valor1.visibility = View.INVISIBLE}
 
-                    binding.valor2.text = "(100 × $n100 = ${100 * n100}) + $res1 = ${res2 + res1},00"
-                    binding.valor2.visibility = View.VISIBLE
+                    if (n100 != 0) {
+                        binding.valor2.text = "(100 × $n100 = ${100 * n100}) + $res1 = ${res2 + res1},00"
+                        binding.valor2.visibility = View.VISIBLE
+                    }else{binding.valor2.visibility = View.INVISIBLE}
 
-                    binding.valor3.text = "(50 × $n50 = ${50 * n50}) + ${res2 + res1} = ${res3 + res2 + res1},00"
-                    binding.valor3.visibility = View.VISIBLE
+                    if (n50 != 0) {
+                        binding.valor3.text = "(50 × $n50 = ${50 * n50}) + ${res2 + res1} = ${res3 + res2 + res1},00"
+                        binding.valor3.visibility = View.VISIBLE
+                    }else{binding.valor3.visibility = View.INVISIBLE}
 
-                    binding.valor4.text = "(20 × $n20 = ${20 * n20}) + ${res3 + res2 + res1} = ${res4 + res3 + res2 + res1},00"
-                    binding.valor4.visibility = View.VISIBLE
+                    if (n20 != 0) {
+                        binding.valor4.text = "(20 × $n20 = ${20 * n20}) + ${res3 + res2 + res1} = ${res4 + res3 + res2 + res1},00"
+                        binding.valor4.visibility = View.VISIBLE
+                    }else{binding.valor4.visibility = View.INVISIBLE}
 
-                    binding.valor5.text = "(10 × $n10 = ${10 * n10}) + ${res4 + res3 + res2 + res1} = ${res5 + res4 + res3 + res2 + res1},00"
-                    binding.valor5.visibility = View.VISIBLE
+                    if (n10 != 0) {
+                        binding.valor5.text = "(10 × $n10 = ${10 * n10}) + ${res4 + res3 + res2 + res1} = ${res5 + res4 + res3 + res2 + res1},00"
+                        binding.valor5.visibility = View.VISIBLE
+                    }else{binding.valor5.visibility = View.INVISIBLE}
 
-                    binding.valor6.text = "(5 × $n5 = ${5 * n5}) + ${res5 + res4 + res3 + res2 + res1} = ${res6 + res5 + res4 + res3 + res2 + res1},00"
-                    binding.valor6.visibility = View.VISIBLE
+                    if (n5 != 0) {
+                        binding.valor6.text = "(5 × $n5 = ${5 * n5}) + ${res5 + res4 + res3 + res2 + res1} = ${res6 + res5 + res4 + res3 + res2 + res1},00"
+                        binding.valor6.visibility = View.VISIBLE
+                    }else{binding.valor6.visibility = View.INVISIBLE}
 
-                    binding.valor7.text = "(2 × $n2 = ${2 * n2}) + ${res6 + res5 + res4 + res3 + res2 + res1} = ${res7 + res6 + res5 + res4 + res3 + res2 + res1},00"
-                    binding.valor7.visibility = View.VISIBLE
+                    if (n2 != 0) {
+                        binding.valor7.text = "(2 × $n2 = ${2 * n2}) + ${res6 + res5 + res4 + res3 + res2 + res1} = ${res7 + res6 + res5 + res4 + res3 + res2 + res1},00"
+                        binding.valor7.visibility = View.VISIBLE
+                    }else{binding.valor7.visibility = View.INVISIBLE}
 
-                    binding.valor8.text = "(1 × $n1 = ${1 * n1}) + ${res7 + res6 + res5 + res4 + res3 + res2 + res1} = ${res8 + res7 + res6 + res5 + res4 + res3 + res2 + res1},00"
-                    binding.valor8.visibility = View.VISIBLE
+                    if (n1 != 0) {
+                        binding.valor8.text = "(1 × $n1 = ${1 * n1}) + ${res7 + res6 + res5 + res4 + res3 + res2 + res1} = ${res8 + res7 + res6 + res5 + res4 + res3 + res2 + res1},00"
+                        binding.valor8.visibility = View.VISIBLE
+                    }else{binding.valor8.visibility = View.INVISIBLE}
 
                     binding.valorFinal.text = "Valor final: R$$valorCompleto,00"
                     binding.valorFinal.visibility = View.VISIBLE

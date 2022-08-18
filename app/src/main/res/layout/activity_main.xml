@@ -83,77 +83,83 @@
         android:padding="40dp"
         android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/saida_user200"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="135dp" />
+        android:layout_marginTop="135dp"
+        android:layout_marginHorizontal="20dp">
 
-    <TextView
-        android:id="@+id/saida_user100"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="165dp" />
+        <TextView
+            android:id="@+id/saida_user200"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:visibility="invisible" />
 
-    <TextView
-        android:id="@+id/saida_user50"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="195dp" />
+        <TextView
+            android:id="@+id/saida_user100"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/saida_user200"
+            android:visibility="invisible"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/saida_user20"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="225dp" />
+        <TextView
+            android:id="@+id/saida_user50"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/saida_user100"
+            android:visibility="invisible"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/saida_user10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="255dp" />
+        <TextView
+            android:id="@+id/saida_user20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/saida_user50"
+            android:visibility="invisible"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/saida_user5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="285dp" />
+        <TextView
+            android:id="@+id/saida_user10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/saida_user20"
+            android:textSize="20sp"
+            android:visibility="invisible" />
 
-    <TextView
-        android:id="@+id/saida_user2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="315dp" />
+        <TextView
+            android:id="@+id/saida_user5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/saida_user10"
+            android:textSize="20sp"
+            android:visibility="invisible" />
 
-    <TextView
-        android:id="@+id/saida_user1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:textSize="20sp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="345dp" />
+        <TextView
+            android:id="@+id/saida_user2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/saida_user5"
+            android:visibility="invisible"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/saida_user1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/saida_user2"
+            android:visibility="invisible"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/titulo_card"
