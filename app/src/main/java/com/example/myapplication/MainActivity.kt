@@ -279,7 +279,7 @@ class MainActivity : AppCompatActivity() {
                         binding.valor8.visibility = View.VISIBLE
                     }else{binding.valor8.visibility = View.INVISIBLE}
 
-                    binding.valorFinal.text = "Valor final: R$$valorCompleto,00"
+                    binding.valorFinal.text = "Valor final: R$${res8 + res7 + res6 + res5 + res4 + res3 + res2 + res1},00"
                     binding.valorFinal.visibility = View.VISIBLE
                 }
                 }catch (e: Exception){
