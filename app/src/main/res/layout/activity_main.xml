@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- Root ou view mãe -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:theme="@style/Theme.MyApplication"
     tools:context=".MainActivity">
 
+    <!-- Botão FAB (Floating Action Button) para fazer o saque -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/saque_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="Fazer saque"
         app:backgroundTint="@color/white"
         app:icon="@drawable/ic_round_monetization_on_24"
         app:iconSize="35dp"
         app:iconTint="@color/green"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="20dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText" />
 
+    <!-- Botão FAB (Floating Action Button) para limpar os dados -->
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/limpar_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="Limpar dados"
         android:visibility="invisible"
         app:backgroundTint="@color/white"
         app:icon="@drawable/ic_baseline_clear_all_24"
         app:iconSize="35dp"
         app:iconTint="@color/green"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText" />
 
+    <!-- Título da tela -->
     <TextView
         android:id="@+id/titulo"
         android:layout_width="match_parent"
@@ -40,55 +52,71 @@
         android:layout_marginHorizontal="20dp"
         android:textSize="47sp"
         android:text="Sacar dinheiro 💵"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        tools:ignore="HardcodedText" />
 
+    <!-- Divisória do título -->
     <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_below="@+id/titulo"
+        android:layout_marginTop="2dp"
         app:dividerColor="@color/green"
-        app:dividerInsetStart="20dp"
         app:dividerInsetEnd="20dp"
-        app:dividerThickness="2dp"/>
+        app:dividerInsetStart="20dp"
+        app:dividerThickness="2dp" />
 
+    <!-- Texto "Valor:" -->
     <TextView
         android:id="@+id/valor_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
+        android:layout_below="@+id/divider_titulo"
         android:layout_marginStart="20dp"
-        android:textSize="30sp"
+        android:layout_marginTop="5sp"
         android:text="Valor:"
-        android:layout_marginTop="90dp" />
+        android:textSize="30sp"
+        android:visibility="invisible"
+        tools:ignore="HardcodedText" />
 
+    <!-- Saída do valor total que foi inserido pelo usuário -->
     <TextView
         android:id="@+id/saque"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
-        android:visibility="invisible"
-        android:textSize="30sp"
+        android:layout_below="@+id/divider_titulo"
+        android:layout_toEndOf="@+id/valor_text"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5sp"
         android:textColor="@color/green"
-        android:layout_marginTop="90dp" />
+        android:textSize="30sp"
+        android:visibility="invisible" />
 
+    <!-- Aviso / Instrução ao usuário -->
     <TextView
         android:id="@+id/aviso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        android:text="Clique no botão flutuante no canto inferior direito para sacar o seu dinheirinho (›_‹)"
-        android:textColor="#B3B3B3"
+        android:layout_below="@+id/divider_titulo"
+        android:layout_marginTop="100dp"
         android:padding="40dp"
-        android:textSize="25sp" />
+        android:text="Clique no botão flutuante no canto inferior direito para sacar o seu dinheirinho (›_‹)"
+        android:textColor="@color/darkgrey"
+        android:textSize="25sp"
+        android:visibility="visible"
+        tools:ignore="HardcodedText" />
 
+    <!-- RelativeLayout das saídas das notas utilizadas -->
     <RelativeLayout
+        android:id="@+id/saidas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="135dp"
+        android:layout_below="@+id/valor_text"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="20dp">
 
+        <!-- Notas de 200 -->
         <TextView
             android:id="@+id/saida_user200"
             android:layout_width="match_parent"
@@ -96,6 +124,7 @@
             android:textSize="20sp"
             android:visibility="invisible" />
 
+        <!-- Notas de 100 -->
         <TextView
             android:id="@+id/saida_user100"
             android:layout_width="match_parent"
@@ -105,6 +134,7 @@
             android:visibility="invisible"
             android:textSize="20sp" />
 
+        <!-- Notas de 50 -->
         <TextView
             android:id="@+id/saida_user50"
             android:layout_width="match_parent"
@@ -114,6 +144,7 @@
             android:visibility="invisible"
             android:textSize="20sp" />
 
+        <!-- Notas de 20 -->
         <TextView
             android:id="@+id/saida_user20"
             android:layout_width="match_parent"
@@ -123,6 +154,7 @@
             android:visibility="invisible"
             android:textSize="20sp" />
 
+        <!-- Notas de 10 -->
         <TextView
             android:id="@+id/saida_user10"
             android:layout_width="match_parent"
@@ -132,6 +164,7 @@
             android:textSize="20sp"
             android:visibility="invisible" />
 
+        <!-- Notas de 5 -->
         <TextView
             android:id="@+id/saida_user5"
             android:layout_width="match_parent"
@@ -141,6 +174,7 @@
             android:textSize="20sp"
             android:visibility="invisible" />
 
+        <!-- Notas de 2 -->
         <TextView
             android:id="@+id/saida_user2"
             android:layout_width="match_parent"
@@ -150,6 +184,7 @@
             android:visibility="invisible"
             android:textSize="20sp" />
 
+        <!-- Notas de 1 -->
         <TextView
             android:id="@+id/saida_user1"
             android:layout_width="match_parent"
@@ -161,44 +196,62 @@
 
     </RelativeLayout>
 
+    <!-- Título do card -->
     <TextView
         android:id="@+id/titulo_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/saidas"
         android:layout_gravity="center"
-        android:layout_marginTop="12dp"
-        android:visibility="invisible"
-        android:textSize="25sp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
         android:text="Extrato bancário"
-        android:layout_marginHorizontal="20dp"/>
+        android:textSize="25sp"
+        android:visibility="invisible"
+        tools:ignore="HardcodedText" />
 
+    <!-- Divisória do título do card -->
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        android:layout_marginTop="37dp"
-        android:layout_gravity="center"
+        android:layout_below="@id/titulo_card"
         app:dividerColor="@color/green"
         app:dividerInsetStart="20dp"
         app:dividerInsetEnd="20dp"
         app:dividerThickness="2dp"/>
 
+    <!-- Card do extrato bancário -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/divider_card"
         android:visibility="invisible"
-        android:layout_gravity="bottom"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="100dp"
         app:cardElevation="8dp"
         app:cardCornerRadius="2dp">
 
+        <!-- Botão collapse do card -->
+        <ImageButton
+            android:id="@+id/collapse_card_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/ic_round_keyboard_arrow_down_24"
+            android:background="@android:color/transparent"
+            android:layout_gravity="end"
+            android:contentDescription="Exibir/Esconder"
+            tools:ignore="HardcodedText" />
+
+        <!-- RelativeLayout das saídas do extrato bancário -->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!-- Cálculo 1 (Notas de 200) -->
             <TextView
                 android:id="@+id/valor1"
                 android:layout_width="match_parent"
@@ -207,6 +260,7 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo 2 (Notas de 100) -->
             <TextView
                 android:id="@+id/valor2"
                 android:layout_width="match_parent"
@@ -216,6 +270,7 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo 3 (Notas de 50) -->
             <TextView
                 android:id="@+id/valor3"
                 android:layout_width="match_parent"
@@ -225,6 +280,7 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo 4 (Notas de 20) -->
             <TextView
                 android:id="@+id/valor4"
                 android:layout_width="match_parent"
@@ -234,6 +290,7 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo 5 (Notas de 10) -->
             <TextView
                 android:id="@+id/valor5"
                 android:layout_width="match_parent"
@@ -243,6 +300,7 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo 6 (Notas de 5) -->
             <TextView
                 android:id="@+id/valor6"
                 android:layout_width="match_parent"
@@ -252,6 +310,7 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo 7 (Notas de 2) -->
             <TextView
                 android:id="@+id/valor7"
                 android:layout_width="match_parent"
@@ -261,6 +320,7 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo 8 (Notas de 1) -->
             <TextView
                 android:id="@+id/valor8"
                 android:layout_width="match_parent"
@@ -270,17 +330,18 @@
                 android:padding="5dp"
                 android:textSize="20sp" />
 
+            <!-- Cálculo Final (Valor final atingido) -->
             <TextView
                 android:id="@+id/valorFinal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
                 android:layout_below="@+id/valor8"
                 android:padding="5dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="visible" />
 
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

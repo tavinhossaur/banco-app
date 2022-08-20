@@ -49,4 +49,5 @@ dependencies {
     // Sheets para AlertDialog e Bottom Sheets, etc.
     implementation 'com.maxkeppeler.sheets:core:2.2.9'
     implementation 'com.maxkeppeler.sheets:input:2.2.9'
+    implementation 'com.maxkeppeler.sheets:info:2.2.9'
 }
